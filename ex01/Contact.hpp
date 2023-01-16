@@ -17,4 +17,7 @@ class Contact {
 		void DisplayContact(void);
 };
 
+void	PrintTableContent(std::string content);
+void	PrintTableLine();
+
 #endif // CONTACT_H

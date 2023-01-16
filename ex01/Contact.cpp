@@ -22,7 +22,7 @@ void Contact::FillContact(void) {
 	std::cin >> darkest_secret;
 }
 
-static void	PrintTableLine() {
+void	PrintTableLine() {
 	std::cout << std::endl;
 	for (int j = 0; j < 3; j++) {
 		std::cout << "+";
@@ -32,7 +32,7 @@ static void	PrintTableLine() {
 	std::cout << "+" << std::endl;
 }
 
-static void	PrintTableContent(std::string content) {
+void	PrintTableContent(std::string content) {
 	unsigned long	char_c;
 
 	char_c = 8;
@@ -53,14 +53,8 @@ static void	PrintTableContent(std::string content) {
 
 void Contact::DisplayContact(void) {
 	PrintTableLine();
-	PrintTableContent("F NAME");
-	PrintTableContent("L NAME");
-	PrintTableContent("NICKNAME");
-	std::cout << "|";
-	PrintTableLine();
 	PrintTableContent(first_name);
 	PrintTableContent(last_name);
 	PrintTableContent(nickname);
 	std::cout << "|";
-	PrintTableLine();
 }

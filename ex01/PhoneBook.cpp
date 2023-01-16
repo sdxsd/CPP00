@@ -11,8 +11,14 @@ PhoneBook::~PhoneBook(void) {
 }
 
 void PhoneBook::PrintPhoneBook(void) {
-	for (short i = 0; i <= NumContacts; i++)
+	PrintTableLine();
+	PrintTableContent("F NAME");
+	PrintTableContent("L NAME");
+	PrintTableContent("NICK N");
+	std::cout << "|";
+	for (short i = 0; i < NumContacts; i++)
 		ContactList[i].DisplayContact();
+	PrintTableLine();
 }
 
 void PhoneBook::AddContactToPhoneBook() {
