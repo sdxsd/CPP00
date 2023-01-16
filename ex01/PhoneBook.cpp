@@ -25,28 +25,22 @@ void PhoneBook::AddContactToPhoneBook() {
 	if (NumContacts >= 7)
 		NumContacts = 0;
 	ContactList[NumContacts++].FillContact();
+	std::cout << "Contact added successfully." << std::endl;
 }
 
 void PhoneBook::ReceiveCommand() {
 	std::string	cmd;
-	bool		cont;
 
-	cont = true;
-	while (cont != false) {
-		std::cout << "Enter command (ADD, SEARCH, EXIT, DISPLAY): ";
-		std::getline(std::cin, cmd);
-		cont = false;
-		if (cmd == "ADD")
-			AddContactToPhoneBook();
-		else if (cmd == "SEARCH")
+	std::cout << "Enter command: ";
+	std::cin >> cmd;
+	if (cmd == "ADD")
+		AddContactToPhoneBook();
+	else if (cmd == "SEARCH")
 			SearchPhoneBook();
-		else if (cmd == "EXIT")
-			Exit = true;
-		else if (cmd == "DISPLAY")
-			PrintPhoneBook();
-		else
-			cont = true;
-	}
+	else if (cmd == "EXIT")
+		Exit = true;
+	else if (cmd == "DISPLAY")
+		PrintPhoneBook();
 }
 
 void PhoneBook::SearchPhoneBook(void) {
