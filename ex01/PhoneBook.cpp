@@ -49,8 +49,10 @@ void PhoneBook::SearchPhoneBook(void) {
 	std::cout << "Enter index of contact: ";
 	std::cin >> IndexString;
 	int index = atoi(IndexString.c_str()) - 1;
-	if (!(index < 0 || index > 7 || index > NumContacts))
+	if (!(index < 0 || index > 7 || index > NumContacts)) {
 		ContactList[index].DisplayContact();
+		PrintTableLine();
+	}
 	else
 		std::cout << "Contact not found." << std::endl;
 }
