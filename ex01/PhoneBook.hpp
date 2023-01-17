@@ -5,13 +5,12 @@
 class PhoneBook {
 	private:
 		Contact ContactList[8];
+		short	IndexContacts;
 		short	NumContacts;
 		bool	Exit;
 	public:
-		// Class constructor and destructor.
 		PhoneBook(void);
 		~PhoneBook(void);
-		// Class methods.
 		void	PrintPhoneBook(void);
 		void	ReceiveCommand(void);
 		bool	ShouldExit(void);

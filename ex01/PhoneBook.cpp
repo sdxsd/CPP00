@@ -1,4 +1,5 @@
 #include "PhoneBook.hpp"
+#include <cctype>
 #include <stdlib.h>
 
 PhoneBook::PhoneBook(void) {
@@ -22,9 +23,11 @@ void PhoneBook::PrintPhoneBook(void) {
 }
 
 void PhoneBook::AddContactToPhoneBook() {
-	if (NumContacts >= 7)
-		NumContacts = 0;
-	ContactList[NumContacts++].FillContact();
+	if (IndexContacts >= 8)
+		IndexContacts = 0;
+	ContactList[IndexContacts++].FillContact();
+	if (NumContacts < 8)
+		NumContacts++;
 	std::cout << "Contact added successfully." << std::endl;
 }
 
@@ -33,13 +36,18 @@ void PhoneBook::ReceiveCommand() {
 
 	std::cout << "Enter command: ";
 	std::cin >> cmd;
-	if (cmd == "ADD")
-		AddContactToPhoneBook();
-	else if (cmd == "SEARCH")
-			SearchPhoneBook();
-	else if (cmd == "EXIT")
+	if (std::cin.eof())
 		Exit = true;
-	else if (cmd == "DISPLAY")
+	for (unsigned long i = 0; i < cmd.length(); i++)
+		if (std::isalpha(cmd[i]) && std::isupper(cmd[i]))
+			cmd[i] += 32;
+	if (cmd == "add")
+		AddContactToPhoneBook();
+	else if (cmd == "search")
+			SearchPhoneBook();
+	else if (cmd == "exit")
+		Exit = true;
+	else if (cmd == "display")
 		PrintPhoneBook();
 }
 
