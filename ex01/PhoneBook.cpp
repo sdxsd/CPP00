@@ -5,6 +5,7 @@
 PhoneBook::PhoneBook(void) {
 	Exit = false;
 	NumContacts = 0;
+	IndexContacts = 0;
 }
 
 PhoneBook::~PhoneBook(void) {
@@ -56,9 +57,9 @@ void PhoneBook::SearchPhoneBook(void) {
 
 	std::cout << "Enter index of contact: ";
 	std::cin >> IndexString;
-	int index = atoi(IndexString.c_str()) - 1;
-	if (!(index < 0 || index > 7 || index > NumContacts)) {
-		ContactList[index].DisplayContact();
+	int index = atoi(IndexString.c_str());
+	if ((index > 0 && index <= 7) && index <= NumContacts) {
+		ContactList[index - 1].DisplayContact();
 		PrintTableLine();
 	}
 	else
