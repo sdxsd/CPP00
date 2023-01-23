@@ -7,12 +7,13 @@ class Contact {
 		std::string	first_name;
 		std::string	last_name;
 		std::string	nickname;
+		std::string	phone_number;
 		std::string	darkest_secret;
 	public:
 		Contact(void);
 		~Contact(void);
 		void	FillContact(void);
-		void	DisplayContact(void);
+		void	DisplayContact(int idx);
 };
 
 void	PrintTableContent(std::string content);

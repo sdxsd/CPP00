@@ -4,6 +4,7 @@ Contact::Contact(void) {
 	first_name = "";
 	last_name = "";
 	nickname = "";
+	phone_number = "";
 	darkest_secret = "";
 }
 
@@ -18,18 +19,27 @@ void Contact::FillContact(void) {
 	std::cin >> last_name;
 	std::cout << "Enter nickname: ";
 	std::cin >> nickname;
+	std::cout << "Enter phone number: ";
+	std::cin >> phone_number;
 	std::cout << "Enter darkest secret: ";
 	std::cin >> darkest_secret;
 }
 
 void	PrintTableLine() {
 	std::cout << std::endl;
-	for (int j = 0; j < 3; j++) {
+	for (int j = 0; j < 4; j++) {
 		std::cout << "+";
 		for (int i = 0; i <= 8; i++)
 			std::cout << '-';
 	}
 	std::cout << "+" << std::endl;
+}
+
+void	PrintIndex(int idx) {
+	std::cout << "|";
+	std::cout << idx;
+	for (unsigned long i = 0; i < 8; i++)
+		std::cout << " ";
 }
 
 void	PrintTableContent(std::string content) {
@@ -51,8 +61,9 @@ void	PrintTableContent(std::string content) {
 	}
 }
 
-void Contact::DisplayContact(void) {
+void Contact::DisplayContact(int idx) {
 	PrintTableLine();
+	PrintIndex(idx);
 	PrintTableContent(first_name);
 	PrintTableContent(last_name);
 	PrintTableContent(nickname);
