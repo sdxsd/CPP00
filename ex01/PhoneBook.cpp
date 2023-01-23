@@ -1,5 +1,6 @@
 #include "PhoneBook.hpp"
 #include <cctype>
+#include <ios>
 #include <stdlib.h>
 
 PhoneBook::PhoneBook(void) {
@@ -37,7 +38,7 @@ void PhoneBook::ReceiveCommand() {
 	std::string	cmd;
 
 	std::cout << "Enter command: ";
-	std::cin >> cmd;
+	std::cin >> std::noskipws >> cmd;
 	if (std::cin.eof())
 		Exit = true;
 	for (unsigned long i = 0; i < cmd.length(); i++)
@@ -51,6 +52,8 @@ void PhoneBook::ReceiveCommand() {
 	}
 	else if (cmd == "exit")
 		Exit = true;
+	else
+		std::cout << "Unknown command." << std::endl;
 }
 
 void PhoneBook::SearchPhoneBook(void) {
