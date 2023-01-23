@@ -68,7 +68,6 @@ void PhoneBook::SearchPhoneBook(void) {
 		std::cout << "Invalid input." << std::endl;
 }
 
-bool PhoneBook::ShouldExit()
-{
+bool PhoneBook::ShouldExit() {
 	return (Exit);
 }
