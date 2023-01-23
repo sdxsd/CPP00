@@ -1,11 +1,7 @@
 #include "Contact.hpp"
 
 Contact::Contact(void) {
-	first_name = "";
-	last_name = "";
-	nickname = "";
-	phone_number = "";
-	darkest_secret = "";
+	;
 }
 
 Contact::~Contact(void) {
@@ -13,6 +9,11 @@ Contact::~Contact(void) {
 }
 
 void Contact::FillContact(void) {
+	first_name.clear();
+	last_name.clear();
+	nickname.clear();
+	phone_number.clear();
+	darkest_secret.clear();
 	while (first_name.length() == 0) {
 		std::cout << "Enter first name: ";
 		std::getline(std::cin, first_name);
