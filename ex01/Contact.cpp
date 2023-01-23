@@ -35,8 +35,8 @@ void	PrintTableLine() {
 void	PrintTableContent(std::string content) {
 	unsigned long	char_c;
 
-	char_c = 8;
-	std::cout << "| ";
+	char_c = 9;
+	std::cout << "|";
 	if (content.length() > char_c) {
 		for (unsigned long i = 0; i < char_c - 1; i++) {
 			std::cout << content[i];
