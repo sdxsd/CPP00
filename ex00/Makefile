@@ -2,7 +2,7 @@ NAME = Megaphone
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 FILES = \
-		Megaphone.cpp
+		megaphone.cpp
 OFILES = $(FILES:.cpp=.o)
 
 all: $(NAME)
