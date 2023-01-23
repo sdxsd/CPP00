@@ -14,15 +14,15 @@ PhoneBook::~PhoneBook(void) {
 }
 
 void PhoneBook::PrintPhoneBook(void) {
-	PrintTableLine();
-	PrintTableContent("INDEX");
-	PrintTableContent("F NAME");
-	PrintTableContent("L NAME");
-	PrintTableContent("NICK N");
+	ContactList[0].PrintTableLine();
+	ContactList[0].PrintTableContent("INDEX");
+	ContactList[0].PrintTableContent("F NAME");
+	ContactList[0].PrintTableContent("L NAME");
+	ContactList[0].PrintTableContent("NICK N");
 	std::cout << "|";
 	for (short i = 0; i < NumContacts; i++)
 		ContactList[i].DisplayContact(i + 1);
-	PrintTableLine();
+	ContactList[0].PrintTableLine();
 }
 
 void PhoneBook::AddContactToPhoneBook() {

@@ -35,7 +35,7 @@ void Contact::FillContact(void) {
 	}
 }
 
-void	PrintTableLine() {
+void	Contact::PrintTableLine() {
 	std::cout << std::endl;
 	for (int j = 0; j < 4; j++) {
 		std::cout << "+";
@@ -45,14 +45,14 @@ void	PrintTableLine() {
 	std::cout << "+" << std::endl;
 }
 
-void	PrintIndex(int idx) {
+void	Contact::PrintIndex(int idx) {
 	std::cout << "|";
 	std::cout << idx;
 	for (unsigned long i = 0; i < 8; i++)
 		std::cout << " ";
 }
 
-void	PrintTableContent(std::string content) {
+void	Contact::PrintTableContent(std::string content) {
 	unsigned long	char_c;
 
 	char_c = 9;
