@@ -21,6 +21,7 @@ void PhoneBook::PrintPhoneBook(void) {
 	std::cout << "|";
 	for (short i = 0; i < NumContacts; i++)
 		ContactList[i].DisplayContact(i + 1);
+	PrintTableLine();
 }
 
 void PhoneBook::AddContactToPhoneBook() {
