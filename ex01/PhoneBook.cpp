@@ -60,8 +60,7 @@ void PhoneBook::SearchPhoneBook(void) {
 	std::cin >> IndexString;
 	int index = atoi(IndexString.c_str());
 	if ((index > 0 && index <= 7) && index <= NumContacts) {
-		ContactList[index - 1].DisplayContact(index);
-		PrintTableLine();
+		ContactList[index - 1].DisplayFullContactInfo();
 	}
 	else
 		std::cout << "Contact not found." << std::endl;

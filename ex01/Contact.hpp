@@ -14,6 +14,7 @@ class Contact {
 		~Contact(void);
 		void	FillContact(void);
 		void	DisplayContact(int idx);
+		void	DisplayFullContactInfo(void);
 };
 
 void	PrintTableContent(std::string content);

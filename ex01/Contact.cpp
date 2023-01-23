@@ -61,6 +61,14 @@ void	PrintTableContent(std::string content) {
 	}
 }
 
+void Contact::DisplayFullContactInfo(void) {
+	std::cout << "First name: " << first_name << std::endl;
+	std::cout << "Last name: " << last_name << std::endl;
+	std::cout << "Nickname: " << nickname << std::endl;
+	std::cout << "Phone number: " << phone_number << std::endl;
+	std::cout << "Darkest secret: " << darkest_secret << std::endl;
+}
+
 void Contact::DisplayContact(int idx) {
 	PrintTableLine();
 	PrintIndex(idx);
