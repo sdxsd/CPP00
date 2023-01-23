@@ -1,17 +1,27 @@
-##
-# PhoneBook
-
 NAME = PhoneBook
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-FILES = main.cpp Contact.cpp PhoneBook.cpp
+FILES = \
+		Contact.cpp \
+		PhoneBook.cpp \
+		main.cpp
+OFILES = $(FILES:.cpp=.o)
 
-$(NAME):
-	$(CC) $(FLAGS) $(FILES) -o $(NAME)
+all: $(NAME)
+
+$(NAME): $(OFILES)
+	$(CC) $(FLAGS) $(OFILES) -o $(NAME)
+
+%.o: %.cpp
+	@$(CC) $(FLAGS) -c $< -o $@
+	@echo "COMPILED:" $<
 
 clean:
-	rm -rf $(NAME)
+	rm -f $(OFILES)
 
-re: clean $(NAME)
+fclean: clean
+	@rm -f $(NAME)
 
-# end
+re: fclean all
+
+.PHONY: all clean fclean re

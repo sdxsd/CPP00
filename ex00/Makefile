@@ -1,13 +1,25 @@
-##
-# Megaphone
-NAME = megaphone
+NAME = Megaphone
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
+FILES = \
+		Megaphone.cpp
+OFILES = $(FILES:.cpp=.o)
 
-$(NAME):
-	$(CC) $(FLAGS) megaphone.cpp -o $(NAME)
+all: $(NAME)
+
+$(NAME): $(OFILES)
+	$(CC) $(FLAGS) $(OFILES) -o $(NAME)
+
+%.o: %.cpp
+	@$(CC) $(FLAGS) -c $< -o $@
+	@echo "COMPILED:" $<
 
 clean:
-	rm -rf $(NAME)
+	rm -f $(OFILES)
 
-# end
+fclean: clean
+	@rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
