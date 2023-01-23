@@ -38,7 +38,7 @@ void PhoneBook::ReceiveCommand() {
 	std::string	cmd;
 
 	std::cout << "Enter command: ";
-	std::cin >> std::noskipws >> cmd;
+	std::getline(std::cin, cmd);
 	if (std::cin.eof())
 		Exit = true;
 	for (unsigned long i = 0; i < cmd.length(); i++)
@@ -60,7 +60,7 @@ void PhoneBook::SearchPhoneBook(void) {
 	std::string	IndexString;
 
 	std::cout << "Enter index of contact: ";
-	std::cin >> IndexString;
+	std::getline(std::cin, IndexString);
 	int index = atoi(IndexString.c_str());
 	if ((index > 0 && index <= 7) && index <= NumContacts) {
 		ContactList[index - 1].DisplayFullContactInfo();

@@ -13,16 +13,26 @@ Contact::~Contact(void) {
 }
 
 void Contact::FillContact(void) {
-	std::cout << "Enter first name: ";
-	std::cin >> first_name;
-	std::cout << "Enter last name: ";
-	std::cin >> last_name;
-	std::cout << "Enter nickname: ";
-	std::cin >> nickname;
-	std::cout << "Enter phone number: ";
-	std::cin >> phone_number;
-	std::cout << "Enter darkest secret: ";
-	std::cin >> darkest_secret;
+	while (first_name.length() == 0) {
+		std::cout << "Enter first name: ";
+		std::getline(std::cin, first_name);
+	}
+	while (last_name.length() == 0) {
+		std::cout << "Enter last name: ";
+		std::getline(std::cin, last_name);
+	}
+	while (nickname.length() == 0) {
+		std::cout << "Enter nickname: ";
+		std::getline(std::cin, nickname);
+	}
+	while (phone_number.length() == 0) {
+		std::cout << "Enter phone number: ";
+		std::getline(std::cin, phone_number);
+	}
+	while (darkest_secret.length() == 0) {
+		std::cout << "Enter darkest secret: ";
+		std::getline(std::cin, darkest_secret);
+	}
 }
 
 void	PrintTableLine() {
@@ -66,7 +76,7 @@ void Contact::DisplayFullContactInfo(void) {
 	std::cout << "Last name: " << last_name << std::endl;
 	std::cout << "Nickname: " << nickname << std::endl;
 	std::cout << "Phone number: " << phone_number << std::endl;
-	std::cout << "Darkest secret: " << first_name << std::endl;
+	std::cout << "Darkest secret: " << darkest_secret << std::endl;
 }
 
 void Contact::DisplayContact(int idx) {
