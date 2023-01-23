@@ -26,7 +26,6 @@ void Contact::FillContact(void) {
 }
 
 void	PrintTableLine() {
-	std::cout << std::endl;
 	for (int j = 0; j < 4; j++) {
 		std::cout << "+";
 		for (int i = 0; i <= 8; i++)
@@ -70,10 +69,13 @@ void Contact::DisplayFullContactInfo(void) {
 }
 
 void Contact::DisplayContact(int idx) {
+	std::cout << std::endl;
 	PrintTableLine();
 	PrintIndex(idx);
 	PrintTableContent(first_name);
 	PrintTableContent(last_name);
 	PrintTableContent(nickname);
 	std::cout << "|";
+	std::cout << std::endl;
+	PrintTableLine();
 }
